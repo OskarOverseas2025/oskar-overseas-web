@@ -2,6 +2,8 @@ import React from "react";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 import { Globe, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import LogoImg from "../public/logo.png";
 
 export default function Footer() {
   return (
@@ -10,8 +12,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center">
-              <Globe className="h-8 w-8 text-orange-500 mr-2" />
-              <span className="text-xl font-bold">Oskar Overseas</span>
+              <Image src={LogoImg} alt="logo" className="w-[2rem]" />
+              <span className="text-xl font-bold text-white">Oskar Overseas</span>
             </div>
             <p className="text-gray-400">Connecting Nepal to the world through ethical recruitment since 1999.</p>
             <div className="space-y-2">
@@ -57,7 +59,7 @@ export default function Footer() {
             <h3 className="font-bold mb-4">Certifications</h3>
             <div className="space-y-2">
               <Badge className="bg-green-600 text-white">Government Licensed</Badge>
-              <div className="text-gray-400 text-sm">License No: XXXXX</div>
+              <div className="text-gray-400 text-sm">License No: 728-064/65</div>
               <div className="text-gray-400 text-sm">Established: 1999</div>
             </div>
           </div>

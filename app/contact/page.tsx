@@ -10,9 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Badge } from "@/components/ui/badge";
 import { Globe, MapPin, Phone, Mail, Clock, Send, MessageSquare, CheckCircle, AlertCircle } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -293,9 +291,7 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold text-gray-900">Office Hours</h3>
                         <p className="text-gray-600">
-                          Sunday - Friday: 9:00 AM - 6:00 PM
-                          <br />
-                          Saturday: 10:00 AM - 4:00 PM
+                          Sunday - Friday: 9:00 AM - 5:00 PM
                           <br />
                           <span className="text-red-600">Closed on public holidays</span>
                         </p>

@@ -20,6 +20,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import heroImg from "../public/hero.png";
+import LogoImg from "../public/logo.png";
 
 export default function HomePage() {
   return (
@@ -39,11 +40,10 @@ export default function HomePage() {
                   Transformed.
                 </h1>
                 <p className="text-xl text-blue-100 max-w-lg">
-                  From Kathmandu to Globe — we send skilled Nepali manpower where the world needs it most. Licensed, ethical, fast, and 100%
+                  From Kathmandu to Globe — we send skilled Nepalese manpower where the world needs it most. Licensed, ethical, fast, and 100%
                   compliant.
                 </p>
               </div>
-
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href={"/contact"}>
                   <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
@@ -64,11 +64,11 @@ export default function HomePage() {
                   <div className="text-sm text-blue-200">Workers Deployed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-400">12</div>
+                  <div className="text-3xl font-bold text-orange-400">12+</div>
                   <div className="text-sm text-blue-200">Countries</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-400">25</div>
+                  <div className="text-3xl font-bold text-orange-400">{new Date().getFullYear() - 1999}+</div>
                   <div className="text-sm text-blue-200">Years Experience</div>
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default function HomePage() {
               <Image src={heroImg} alt="Global Opportunities" width={700} height={600} className="rounded-lg shadow-2xl" />
               <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 p-6 rounded-lg shadow-xl">
                 <div className="flex items-center space-x-3">
-                  <Globe className="h-8 w-8 text-blue-600" />
+                  <Image src={LogoImg} alt="logo" className="w-[2rem]" />
                   <div>
                     <div className="font-bold">Global Reach</div>
                     <div className="text-sm text-gray-600">Oskar Overseas Pvt Ltd.</div>
@@ -96,8 +96,8 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">About Oskar Overseas</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A licensed manpower recruitment agency founded in 1999, dedicated to connecting Nepali talent with global opportunities through ethical
-              and transparent practices.
+              A licensed manpower recruitment agency founded in 1999, dedicated to connecting Nepalese talent with global opportunities through
+              ethical and transparent practices.
             </p>
           </div>
 
@@ -317,7 +317,6 @@ export default function HomePage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
             <p className="text-xl text-gray-600">Real experiences from our candidates and employer partners.</p>
           </div>
-
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="p-8">
               <div className="flex items-center mb-6">

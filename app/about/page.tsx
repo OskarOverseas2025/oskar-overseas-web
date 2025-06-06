@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Globe, ArrowRight, MapPin, Phone, Mail, Target, Eye, Lightbulb } from "lucide-react";
 import Image from "next/image";
+import Resham from "../../public/members/resham-bdr-gurung.jpeg";
+import Mahayshwari from "../../public/members/mahayshwari.jpeg";
+import Bardan from "../../public/members/bardan.jpeg";
 
 export default function AboutPage() {
   return (
@@ -168,7 +171,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Image src="/placeholder.svg?height=500&width=400" alt="Chairman" width={400} height={500} className="rounded-lg shadow-lg" />
+              <Image src={Resham} alt="Chairman" width={400} height={500} className="rounded-lg shadow-lg object-cover" />
             </div>
             <div className="space-y-6">
               <div>
@@ -213,13 +216,7 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="text-center p-6">
-              <Image
-                src="/placeholder.svg?height=200&width=200"
-                alt="Managing Director"
-                width={200}
-                height={200}
-                className="rounded-full mx-auto mb-4"
-              />
+              <Image src={Resham} alt="Chairman" width={200} height={200} className="rounded-full mx-auto mb-4 object-cover" />
               <CardHeader>
                 <CardTitle>Resham Bahadur Gurung</CardTitle>
                 <CardDescription className="text-blue-600 font-medium">Chairman, Founder</CardDescription>
@@ -230,13 +227,7 @@ export default function AboutPage() {
             </Card>
 
             <Card className="text-center p-6">
-              <Image
-                src="/placeholder.svg?height=200&width=200"
-                alt="Operations Manager"
-                width={200}
-                height={200}
-                className="rounded-full mx-auto mb-4"
-              />
+              <Image src={Bardan} alt="Director" width={200} height={200} className="rounded-full mx-auto mb-4 object-cover" />
               <CardHeader>
                 <CardTitle>Bardan Gurung</CardTitle>
                 <CardDescription className="text-blue-600 font-medium">Director</CardDescription>
@@ -247,10 +238,10 @@ export default function AboutPage() {
             </Card>
 
             <Card className="text-center p-6">
-              <Image src="/placeholder.svg?height=200&width=200" alt="HR Director" width={200} height={200} className="rounded-full mx-auto mb-4" />
+              <Image src={Mahayshwari} alt="Marketing Manager" width={200} height={200} className="rounded-full mx-auto mb-4" />
               <CardHeader>
                 <CardTitle>Mahayshwari Shrestha</CardTitle>
-                <CardDescription className="text-blue-600 font-medium">Marketing Manager</CardDescription>
+                <CardDescription className="text-blue-600 font-medium">Marketing Director</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">Handles Client Relationship, Company Finances and Legal Matters, Contracting Process</p>
@@ -266,7 +257,7 @@ export default function AboutPage() {
                 className="rounded-full mx-auto mb-4"
               />
               <CardHeader>
-                <CardTitle>Meg Gurung</CardTitle>
+                <CardTitle>Megh Gurung</CardTitle>
                 <CardDescription className="text-blue-600 font-medium">Office manager</CardDescription>
               </CardHeader>
               <CardContent>

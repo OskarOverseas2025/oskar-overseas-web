@@ -1,11 +1,11 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
 export const metadata: Metadata = {
   title: "Oskar Overseas - 25 Years of Trust | Licensed Manpower Recruitment Nepal",
@@ -13,13 +13,12 @@ export const metadata: Metadata = {
     "Licensed manpower recruitment agency from Nepal. 25 years of experience, 15,000+ workers deployed across 12 countries. Ethical recruitment with complete transparency and support.",
   keywords:
     "manpower recruitment Nepal, overseas jobs, Gulf jobs, skilled workers, construction jobs, hospitality jobs, healthcare jobs, marine jobs",
-  generator: "v0.dev",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen `}>
+      <body className={`${poppins.className} flex flex-col min-h-screen `}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

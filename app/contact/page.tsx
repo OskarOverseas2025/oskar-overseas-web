@@ -304,6 +304,19 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <section>
+        <div className="lg:h-[38.3125rem] md:h-[25rem] h-[16.1875rem] w-full">
+          <iframe
+            src={
+              "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.6592573482812!2d85.33027412604223!3d27.666012127312275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x44087227ee35291b%3A0xca9c38954e503131!2soskar%20overseas%20pvt.ltd!5e0!3m2!1sen!2snp!4v1749451194209!5m2!1sen!2snp"
+            }
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full"
+          />
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">

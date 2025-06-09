@@ -1,5 +1,5 @@
 "use client";
-import { Facebook, Globe, Instagram, Linkedin, Menu, X } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
@@ -45,16 +45,20 @@ export default function Navbar() {
             {NavItems.map((item) => {
               const isActive = item.path === "/" ? pathname === item.path : pathname.startsWith(item.path);
               return (
-                <Link href={item.path} className={`${isActive ? "text-blue-600" : "text-gray-700"}   hover:text-blue-600 font-medium`}>
+                <Link
+                  href={item.path}
+                  key={item.name}
+                  className={`${isActive ? "text-blue-600" : "text-gray-700"}   hover:text-blue-600 font-medium`}
+                >
                   {item.name}
                 </Link>
               );
             })}
           </div>
-          <Link href={"/contact"}>
+          <Link href={"mailto:bardan.gurung@oskaroverseas.com"}>
             <Button className="bg-blue-600 hover:bg-blue-700 md:block hidden">Apply Now</Button>
           </Link>
-          <button className="lg:hidden flex items-center h-full" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+          <button className="md:hidden flex items-center h-full" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             {!isSidebarOpen && <Menu />}
           </button>
           <div
@@ -83,6 +87,11 @@ export default function Navbar() {
                   </li>
                 );
               })}
+              <li>
+                <Link href={"mailto:bardan.gurung@oskaroverseas.com"}>
+                  <Button className="bg-blue-600 hover:bg-blue-700">Apply Now</Button>
+                </Link>
+              </li>
             </ul>
             <div className="flex justify-center gap-[1.25rem] pb-[.6875rem] border-b border-b-textBlack mx-[2.5rem]">
               <Link href={""}>

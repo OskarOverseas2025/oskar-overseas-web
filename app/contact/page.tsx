@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import Faq from "./Faq";
 import ContactForm from "./_components/ContactForm";
 import InnerBanner from "@/components/InnerBanner";
+import { Suspense } from "react";
 
 export default function ContactPage() {
   return (
@@ -18,7 +19,9 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <ContactForm />
+            <Suspense fallback={<div className="text-center text-gray-500">Loading contact form...</div>}>
+              <ContactForm />
+            </Suspense>
             {/* Office Location and Map */}
             <div className="space-y-8">
               <div>

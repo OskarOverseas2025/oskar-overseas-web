@@ -15,11 +15,11 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-medium">Established 1999 • Licensed & Trusted</Badge>
+              <Badge className="bg-[#faa51b] text-white px-4 py-2 text-sm font-medium">Established 1999 • Licensed & Trusted</Badge>
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                <span className="text-orange-400">25 Years</span> of Trust.
+                <span className="text-[#faa51b]">25 Years</span> of Trust.
                 <br />
-                <span className="text-orange-400">Thousands</span> of Lives
+                <span className="text-[#faa51b]">Thousands</span> of Lives
                 <br />
                 Transformed.
               </h1>
@@ -29,8 +29,8 @@ export default function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href={"mailto:bardan.gurung@oskaroverseas.com"}>
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg">
+              <Link href={"/contact?inquiryType=job-seeker"}>
+                <Button size="lg" className="bg-[#faa51b] hover:bg-[#faa41be8] text-white px-8 py-4 text-lg">
                   Apply Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -44,15 +44,15 @@ export default function HeroSection() {
 
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-blue-600">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">15,000+</div>
+                <div className="text-3xl font-bold text-[#faa51b]">15,000+</div>
                 <div className="text-sm text-blue-200">Workers Deployed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">12+</div>
+                <div className="text-3xl font-bold text-[#faa51b]">12+</div>
                 <div className="text-sm text-blue-200">Countries</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">{new Date().getFullYear() - 1999}+</div>
+                <div className="text-3xl font-bold text-[#faa51b]">{new Date().getFullYear() - 1999}+</div>
                 <div className="text-sm text-blue-200">Years Experience</div>
               </div>
             </div>

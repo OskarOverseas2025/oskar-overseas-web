@@ -45,27 +45,27 @@ export default function AboutSection() {
             <h3 className="text-2xl font-bold text-gray-900">Our Specializations</h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm">
-                <HardHat className="h-6 w-6 text-orange-500" />
+                <HardHat className="h-6 w-6 text-[#faa51b]" />
                 <span className="font-medium">Skilled Labor</span>
               </div>
               <div className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm">
-                <ChefHat className="h-6 w-6 text-orange-500" />
+                <ChefHat className="h-6 w-6 text-[#faa51b]" />
                 <span className="font-medium">Hospitality</span>
               </div>
               <div className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm">
-                <Ship className="h-6 w-6 text-orange-500" />
+                <Ship className="h-6 w-6 text-[#faa51b]" />
                 <span className="font-medium">Marine</span>
               </div>
               <div className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm">
-                <Stethoscope className="h-6 w-6 text-orange-500" />
+                <Stethoscope className="h-6 w-6 text-[#faa51b]" />
                 <span className="font-medium">Healthcare</span>
               </div>
               <div className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm">
-                <Shield className="h-6 w-6 text-orange-500" />
+                <Shield className="h-6 w-6 text-[#faa51b]" />
                 <span className="font-medium">Security</span>
               </div>
               <div className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm">
-                <Building className="h-6 w-6 text-orange-500" />
+                <Building className="h-6 w-6 text-[#faa51b]" />
                 <span className="font-medium">Construction</span>
               </div>
             </div>

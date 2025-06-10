@@ -9,8 +9,8 @@ const contactMsgSchema = z.object({
   email: z.string().email("Invalid email address."),
   phone: z.string().min(8),
   inquiryType: z.string().min(1),
-  country: z.string().min(1),
-  experience: z.string().min(1),
+  country: z.string().optional(),
+  experience: z.string().optional(),
   message: z.string().min(1),
   submitError: z.optional(z.string()),
 });
@@ -28,8 +28,8 @@ export async function sendContactMsg(prevState: unknown, formData: FormData) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["delivered@resend.dev"],
+      from: "Oskar Website <onboarding@resend.dev>",
+      to: ["info.oskaroverseas@gmail.com"],
       subject: msgData.inquiryType,
       react: ContactMsgEmail({
         name: msgData.name,

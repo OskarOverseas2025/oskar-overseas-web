@@ -2,27 +2,26 @@ import { Card } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import Faq from "./Faq";
 import ContactForm from "./_components/ContactForm";
+import InnerBanner from "@/components/InnerBanner";
+import { Suspense } from "react";
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6">Get In Touch</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Ready to start your global career journey? We're here to guide you every step of the way. Contact us today for personalized consultation
-            and support.
-          </p>
-        </div>
-      </section>
-
+      <InnerBanner
+        imgSrc="/about.jpg"
+        title="Get In Touch"
+        description="Ready to start your global career journey? We're here to guide you every step of the way. Contact us today for personalized consultation
+            and support."
+      />
       {/* Contact Form and Map Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <ContactForm />
+            <Suspense fallback={<div className="text-center text-gray-500">Loading contact form...</div>}>
+              <ContactForm />
+            </Suspense>
             {/* Office Location and Map */}
             <div className="space-y-8">
               <div>
@@ -52,11 +51,9 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold text-gray-900">Phone Numbers</h3>
                         <p className="text-gray-600">
-                          Office: +977-1-4444444
+                          Mobile: +977-9851031188
                           <br />
-                          Mobile: +977-9851234567
-                          <br />
-                          WhatsApp: +977-9851234567
+                          WhatsApp: +977-9704146978
                         </p>
                       </div>
                     </div>
@@ -67,8 +64,6 @@ export default function ContactPage() {
                         <h3 className="font-semibold text-gray-900">Email Addresses</h3>
                         <p className="text-gray-600">
                           General: info@oskaroverseas.com
-                          <br />
-                          Jobs: jobs@oskaroverseas.com
                           <br />
                           Support: support@oskaroverseas.com
                         </p>

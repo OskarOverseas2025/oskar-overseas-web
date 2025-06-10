@@ -5,8 +5,8 @@ export interface ContactMsgEmailProps {
   email: string;
   phone: string;
   inquiryType: string;
-  country: string;
-  experience: string;
+  country?: string;
+  experience?: string;
   message: string;
 }
 
@@ -43,10 +43,14 @@ export default function ContactMsgEmail({ name, email, phone, inquiryType, count
               <Text style={mainText}>{email}</Text>
               <Text style={boldText}>Phone : </Text>
               <Text style={mainText}>{phone}</Text>
-              <Text style={boldText}>Country : </Text>
-              <Text style={mainText}>{country}</Text>
-              <Text style={boldText}>Experience : </Text>
-              <Text style={mainText}>{experience}</Text>
+              {inquiryType === "job-seeker" && (
+                <>
+                  <Text style={boldText}>Country : </Text>
+                  <Text style={mainText}>{country}</Text>
+                  <Text style={boldText}>Experience : </Text>
+                  <Text style={mainText}>{experience}</Text>
+                </>
+              )}
               <Text style={boldText}>Message :</Text>
               <Text style={mainText}>{message}</Text>
             </Section>

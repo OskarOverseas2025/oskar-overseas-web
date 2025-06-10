@@ -23,7 +23,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="h-4 w-4 mr-2" />
-                <span className="text-sm">+977-1-XXXXXXX</span>
+                <span className="text-sm">+977-9851031188</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Mail className="h-4 w-4 mr-2" />
@@ -31,7 +31,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
           <div>
             <h3 className="font-bold mb-4">Quick Links</h3>
             <div className="space-y-2">
@@ -65,7 +64,13 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">© {new Date().getFullYear()} Oskar Overseas Pvt. Ltd. All rights reserved.</p>
+          <p className="text-gray-400">
+            © {new Date().getFullYear()} Oskar Overseas Pvt. Ltd. All rights reserved.
+            <a href="https://technirvana.com.np/" target="_blank">
+              {" "}
+              {"  "}Developed by Tech Nirvana.
+            </a>
+          </p>
         </div>
       </div>
     </footer>

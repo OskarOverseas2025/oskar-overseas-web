@@ -1,20 +1,32 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Send } from "lucide-react";
-import Link from "next/link";
 import { useFormStatus } from "react-dom";
 import { sendContactMsg } from "@/app/_actions/email";
+import { useSearchParams } from "next/navigation";
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
+
+  const searchParams = useSearchParams();
+  const initialInquiryType =
+    searchParams.get("inquiryType") === "job-seeker" ? "job-seeker" : searchParams.get("inquiryType") === "employer" ? "employer" : "general";
+
   const [error, setError] = useState<any>({});
   const [success, setSuccess] = useState(false);
+  const [inquiryType, setInquiryType] = useState(initialInquiryType);
+
+  useEffect(() => {
+    console.log("Search Params:", searchParams.toString());
+    setInquiryType(
+      searchParams.get("inquiryType") === "job-seeker" ? "job-seeker" : searchParams.get("inquiryType") === "employer" ? "employer" : "general"
+    );
+  }, [searchParams]);
 
   return (
     <form
@@ -78,7 +90,7 @@ export default function ContactForm() {
         </div>
         <div>
           <Label htmlFor="inquiryType">Inquiry Type *</Label>
-          <Select name="inquiryType" required>
+          <Select name="inquiryType" required value={inquiryType} onValueChange={(value) => setInquiryType(value)}>
             <SelectTrigger className="mt-1">
               <SelectValue placeholder="Select inquiry type" />
             </SelectTrigger>
@@ -86,49 +98,52 @@ export default function ContactForm() {
               <SelectItem value="job-seeker">Job Seeker</SelectItem>
               <SelectItem value="employer">Employer/Recruiter</SelectItem>
               <SelectItem value="general">General Inquiry</SelectItem>
-              <SelectItem value="support">Support/Assistance</SelectItem>
             </SelectContent>
           </Select>
           {error?.inquiryType && <p className="text-red-600 text-sm mt-1">{error.inquiryType}</p>}
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4">
-        <div>
-          <Label htmlFor="country">Preferred Country</Label>
-          <Select name="country">
-            <SelectTrigger className="mt-1">
-              <SelectValue placeholder="Select country" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="uae">UAE</SelectItem>
-              <SelectItem value="qatar">Qatar</SelectItem>
-              <SelectItem value="saudi-arabia">Saudi Arabia</SelectItem>
-              <SelectItem value="japan">Japan</SelectItem>
-              <SelectItem value="israel">Israel</SelectItem>
-              <SelectItem value="malaysia">Malaysia</SelectItem>
-              <SelectItem value="south-korea">South Korea</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
-            </SelectContent>
-          </Select>
-          {error?.country && <p className="text-red-600 text-sm mt-1">{error.country}</p>}
+      {inquiryType === "job-seeker" && (
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="country">Preferred Country</Label>
+            <Select name="country">
+              <SelectTrigger className="mt-1">
+                <SelectValue placeholder="Select country" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="malaysia">Malaysia</SelectItem>
+                <SelectItem value="honkong">Honkong</SelectItem>
+                <SelectItem value="uae">UAE</SelectItem>
+                <SelectItem value="qatar">Qatar</SelectItem>
+                <SelectItem value="saudi-arabia">Saudi Arabia</SelectItem>
+                <SelectItem value="israel">Israel</SelectItem>
+                <SelectItem value="malta">Malta</SelectItem>
+                <SelectItem value="japan">Japan</SelectItem>
+                <SelectItem value="south-korea">South Korea</SelectItem>
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+            {error?.country && <p className="text-red-600 text-sm mt-1">{error.country}</p>}
+          </div>
+          <div>
+            <Label htmlFor="experience">Work Experience</Label>
+            <Select name="experience">
+              <SelectTrigger className="mt-1">
+                <SelectValue placeholder="Select experience level" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="fresher">Fresher (0-1 years)</SelectItem>
+                <SelectItem value="experienced">Experienced (2-5 years)</SelectItem>
+                <SelectItem value="senior">Senior (5+ years)</SelectItem>
+                <SelectItem value="expert">Expert (10+ years)</SelectItem>
+              </SelectContent>
+            </Select>
+            {error?.experience && <p className="text-red-600 text-sm mt-1">{error.experience}</p>}
+          </div>
         </div>
-        <div>
-          <Label htmlFor="experience">Work Experience</Label>
-          <Select name="experience">
-            <SelectTrigger className="mt-1">
-              <SelectValue placeholder="Select experience level" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="fresher">Fresher (0-1 years)</SelectItem>
-              <SelectItem value="experienced">Experienced (2-5 years)</SelectItem>
-              <SelectItem value="senior">Senior (5+ years)</SelectItem>
-              <SelectItem value="expert">Expert (10+ years)</SelectItem>
-            </SelectContent>
-          </Select>
-          {error?.experience && <p className="text-red-600 text-sm mt-1">{error.experience}</p>}
-        </div>
-      </div>
+      )}
 
       <div>
         <Label htmlFor="message">Message *</Label>
@@ -142,22 +157,6 @@ export default function ContactForm() {
         />
         {error?.message && <p className="text-red-600 text-sm mt-1">{error.message}</p>}
       </div>
-
-      {/* <div className="flex items-center space-x-2">
-        <Checkbox id="terms" name="agreeTerms" required />
-        <Label htmlFor="terms" className="text-sm text-gray-600">
-          I agree to the{" "}
-          <Link href="#" className="text-blue-600 hover:underline">
-            Terms & Conditions
-          </Link>{" "}
-          and{" "}
-          <Link href="#" className="text-blue-600 hover:underline">
-            Privacy Policy
-          </Link>
-          *
-        </Label>
-        {error?.agreeTerms && <p className="text-red-600 text-sm mt-1">{error.agreeTerms}</p>}
-      </div> */}
 
       <SubmitButton />
     </form>

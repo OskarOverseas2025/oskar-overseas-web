@@ -13,8 +13,8 @@ export default function CtaSection() {
             <p className="text-blue-100 mb-6 text-lg">
               Ready to transform your career? Join thousands of successful Nepali workers who have built their dreams abroad with our support.
             </p>
-            <Link href={"/contact"} className="space-y-4">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 w-full lg:w-auto">
+            <Link href={"/contact?inquiryType=job-seeker"} className="space-y-4">
+              <Button size="lg" className="bg-[#faa51b] hover:bg-[#faa41be8] w-full lg:w-auto">
                 Apply for Jobs
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -26,7 +26,7 @@ export default function CtaSection() {
             <p className="text-blue-100 mb-6 text-lg">
               Looking for skilled, reliable workers? Partner with us to access Nepal's talented workforce with complete legal compliance and support.
             </p>
-            <Link href={"/contact"} className="space-y-4">
+            <Link href={"/contact?inquiryType=employer"} className="space-y-4">
               <Button
                 size="lg"
                 variant="outline"

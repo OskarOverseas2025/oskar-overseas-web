@@ -9,10 +9,6 @@ import LogoImg from "../public/logo.png";
 
 const NavItems = [
   {
-    name: "Home",
-    path: "/",
-  },
-  {
     name: "About",
     path: "/about",
   },
@@ -23,6 +19,10 @@ const NavItems = [
   {
     name: "Countries",
     path: "/#countries",
+  },
+  {
+    name: "Gallery",
+    path: "/gallery",
   },
   {
     name: "Contact",
@@ -37,10 +37,10 @@ export default function Navbar() {
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          <Link href={"/"} className="flex items-center">
             <Image src={LogoImg} alt="logo" className="w-[2rem]" />
             <span className="text-xl font-bold ">Oskar Overseas</span>
-          </div>
+          </Link>
           <div className="hidden md:flex space-x-8">
             {NavItems.map((item) => {
               const isActive = item.path === "/" ? pathname === item.path : pathname.startsWith(item.path);
@@ -55,7 +55,7 @@ export default function Navbar() {
               );
             })}
           </div>
-          <Link href={"mailto:bardan.gurung@oskaroverseas.com"}>
+          <Link href={"/contact?inquiryType=job-seeker"}>
             <Button className="bg-blue-600 hover:bg-blue-700 md:block hidden">Apply Now</Button>
           </Link>
           <button className="md:hidden flex items-center h-full" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
@@ -88,7 +88,7 @@ export default function Navbar() {
                 );
               })}
               <li>
-                <Link href={"mailto:bardan.gurung@oskaroverseas.com"}>
+                <Link href={"/contact?inquiryType=job-seeker"} onClick={() => setIsSidebarOpen(false)}>
                   <Button className="bg-blue-600 hover:bg-blue-700">Apply Now</Button>
                 </Link>
               </li>

@@ -1,24 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  Globe,
-  Users,
-  Award,
-  Shield,
-  Heart,
-  CheckCircle,
-  ArrowRight,
-  Star,
-  Building,
-  Stethoscope,
-  Ship,
-  HardHat,
-  ChefHat,
-  UserCheck,
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import HeroSection from "./_componentss/HeroSection";
 import AboutSection from "./_componentss/AboutSection";
 import WhyChooseUs from "./_componentss/WhyChooseUs";

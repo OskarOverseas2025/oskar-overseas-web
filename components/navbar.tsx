@@ -9,16 +9,16 @@ import LogoImg from "../public/logo.png";
 
 const NavItems = [
   {
-    name: "About",
-    path: "/about",
+    name: "Home",
+    path: "/",
   },
   {
     name: "Services",
     path: "/#services",
   },
   {
-    name: "Countries",
-    path: "/#countries",
+    name: "About",
+    path: "/about",
   },
   {
     name: "Gallery",

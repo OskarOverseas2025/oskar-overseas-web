@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
-import { Globe, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import LogoImg from "../public/logo.png";
 
@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center text-gray-400">
                 <MapPin className="h-4 w-4 mr-2" />
-                <span className="text-sm">Kathmandu, Nepal</span>
+                <span className="text-sm">Lalitpur, Nepal</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="h-4 w-4 mr-2" />

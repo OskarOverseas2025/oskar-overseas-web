@@ -110,9 +110,15 @@ importers:
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
+      download:
+        specifier: link:yet-another-react-lightbox/plugins/download
+        version: link:yet-another-react-lightbox/plugins/download
       embla-carousel-react:
         specifier: 8.5.1
         version: 8.5.1(react@19.1.0)
+      fullscreen:
+        specifier: link:yet-another-react-lightbox/plugins/fullscreen
+        version: link:yet-another-react-lightbox/plugins/fullscreen
       input-otp:
         specifier: 1.4.1
         version: 1.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -149,6 +155,9 @@ importers:
       resend:
         specifier: ^4.5.2
         version: 4.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      slideshow:
+        specifier: link:yet-another-react-lightbox/plugins/slideshow
+        version: link:yet-another-react-lightbox/plugins/slideshow
       sonner:
         specifier: ^1.7.1
         version: 1.7.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -158,12 +167,21 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.17)
+      thumbnails:
+        specifier: link:yet-another-react-lightbox/plugins/thumbnails
+        version: link:yet-another-react-lightbox/plugins/thumbnails
       vaul:
         specifier: ^0.9.6
         version: 0.9.9(@types/react-dom@19.1.6(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      yet-another-react-lightbox:
+        specifier: ^3.23.2
+        version: 3.23.2(@types/react-dom@19.1.6(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       zod:
         specifier: ^3.24.1
         version: 3.25.51
+      zoom:
+        specifier: link:yet-another-react-lightbox/plugins/zoom
+        version: link:yet-another-react-lightbox/plugins/zoom
     devDependencies:
       '@types/node':
         specifier: ^22
@@ -2672,6 +2690,20 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
+  yet-another-react-lightbox@3.23.2:
+    resolution: {integrity: sha512-nEEtFejdUTeF5VLVO0/uZ+Kw+BxQn4ODKyJkX1JACyXmILRE/++50BS3ylnFytRRWYOJjeeTcOS8o9B00ENTqA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@types/react': ^16 || ^17 || ^18 || ^19
+      '@types/react-dom': ^16 || ^17 || ^18 || ^19
+      react: ^16.8.0 || ^17 || ^18 || ^19
+      react-dom: ^16.8.0 || ^17 || ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   yoctocolors@2.1.1:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
@@ -5073,6 +5105,14 @@ snapshots:
   ws@8.17.1: {}
 
   yaml@2.8.0: {}
+
+  yet-another-react-lightbox@3.23.2(@types/react-dom@19.1.6(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+    optionalDependencies:
+      '@types/react': 19.1.6
+      '@types/react-dom': 19.1.6(@types/react@19.1.6)
 
   yoctocolors@2.1.1: {}
 

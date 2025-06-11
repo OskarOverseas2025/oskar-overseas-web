@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import heroImg from "../../public/hero.png";
 import LogoImg from "../../public/logo.png";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import CountUp from "react-countup";
 
 export default function HeroSection() {
   return (
@@ -41,18 +43,25 @@ export default function HeroSection() {
                 </Button>
               </Link>
             </div>
-
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-blue-600">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#faa51b]">15,000+</div>
+                <CountUp duration={5} className="counter text-3xl font-bold text-[#faa51b]" end={15000} enableScrollSpy></CountUp>
+                <span className="text-3xl font-bold text-[#faa51b]">+</span>
                 <div className="text-sm text-blue-200">Workers Deployed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#faa51b]">12+</div>
+                <CountUp duration={5} className="counter text-3xl font-bold text-[#faa51b]" end={12} enableScrollSpy></CountUp>
+                <span className="text-3xl font-bold text-[#faa51b]">+</span>
                 <div className="text-sm text-blue-200">Countries</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#faa51b]">{new Date().getFullYear() - 1999}+</div>
+                <CountUp
+                  duration={5}
+                  className="counter text-3xl font-bold text-[#faa51b]"
+                  end={new Date().getFullYear() - 1999}
+                  enableScrollSpy
+                ></CountUp>
+                <span className="text-3xl font-bold text-[#faa51b]">+</span>
                 <div className="text-sm text-blue-200">Years Experience</div>
               </div>
             </div>

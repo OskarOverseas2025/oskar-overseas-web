@@ -34,14 +34,20 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">Quick Links</h3>
             <div className="space-y-2">
-              <Link href="/about" className="block text-gray-400 hover:text-white">
-                About Us
+              <Link href="/" className="block text-gray-400 hover:text-white">
+                Home
               </Link>
               <Link href="/#services" className="block text-gray-400 hover:text-white">
                 Services
               </Link>
-              <Link href="/#countries" className="block text-gray-400 hover:text-white">
-                Countries
+              <Link href="/about" className="block text-gray-400 hover:text-white">
+                About
+              </Link>
+              <Link href="/gallery" className="block text-gray-400 hover:text-white">
+                Gallery
+              </Link>
+              <Link href="/contact" className="block text-gray-400 hover:text-white">
+                Contact
               </Link>
             </div>
           </div>

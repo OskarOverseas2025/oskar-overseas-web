@@ -1,4 +1,18 @@
-import { Body, Column, Container, Head, Heading, Hr, Html, Img, Link, Preview, Row, Section, Text } from "@react-email/components";
+import {
+  Body,
+  Column,
+  Container,
+  Head,
+  Heading,
+  Hr,
+  Html,
+  Img,
+  Link,
+  Preview,
+  Row,
+  Section,
+  Text,
+} from "@react-email/components";
 
 export interface ContactMsgEmailProps {
   name: string;
@@ -10,7 +24,15 @@ export interface ContactMsgEmailProps {
   message: string;
 }
 
-export default function ContactMsgEmail({ name, email, phone, inquiryType, country, experience, message }: ContactMsgEmailProps) {
+export default function ContactMsgEmail({
+  name,
+  email,
+  phone,
+  inquiryType,
+  country,
+  experience,
+  message,
+}: ContactMsgEmailProps) {
   return (
     <Html>
       <Head />
@@ -57,7 +79,8 @@ export default function ContactMsgEmail({ name, email, phone, inquiryType, count
           </Section>
           <Hr />
           <Text style={footerText}>
-            This message was produced and distributed by the Contact page of the website of Oskar Overseas Pvt. Ltd.{" "}
+            This message was produced and distributed by the Contact page of the
+            website of Oskar Overseas Pvt. Ltd.{" "}
             <Link href="https://oskaroverseas.com" target="_blank" style={link}>
               oskaroverseas.com
             </Link>

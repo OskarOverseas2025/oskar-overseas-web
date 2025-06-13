@@ -28,8 +28,8 @@ export async function sendContactMsg(prevState: unknown, formData: FormData) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "Oskar Website <onboarding@resend.dev>",
-      to: ["info.oskaroverseas@gmail.com"],
+      from: "Oskar Website <contact@oskaroverseas.com>",
+      to: ["support@oskaroverseas.com"],
       subject: msgData.inquiryType,
       react: ContactMsgEmail({
         name: msgData.name,

@@ -93,7 +93,7 @@ export default function Navbar() {
                 </Link>
               </li>
             </ul>
-            <div className="flex justify-center gap-[1.25rem] pb-[.6875rem] border-b border-b-textBlack mx-[2.5rem]">
+            {/*  <div className="flex justify-center gap-[1.25rem] pb-[.6875rem] border-b border-b-textBlack mx-[2.5rem]">
               <Link href={""}>
                 <Facebook color="blue" />
               </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
               <Link href={""}>
                 <Linkedin color="blue" />
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

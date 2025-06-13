@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import GoogleAnalytics from "@/components/googleTagManager";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href={"/logo.png"} />
       </head>
+      <GoogleAnalytics />
       <body className={`${poppins.className} flex flex-col min-h-screen `}>
         <Navbar />
         <main className="flex-1">{children}</main>

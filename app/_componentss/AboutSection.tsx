@@ -35,7 +35,7 @@ export default function AboutSection() {
               </div>
               <div className="text-center p-4 bg-white rounded-lg shadow-sm">
                 <Globe className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                <div className="font-bold text-gray-900">12</div>
+                <div className="font-bold text-gray-900">12+</div>
                 <div className="text-sm text-gray-600">Countries Served</div>
               </div>
             </div>

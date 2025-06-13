@@ -6,8 +6,8 @@ import React from "react";
 const testimonials = [
   {
     id: 1,
-    name: "Rajesh Shrestha",
-    role: "Construction Worker, UAE",
+    name: "Himal Kaji Gurung",
+    role: "Security Officer, UAE",
     image: "/testimonials/1.jpeg",
     alt: "Candidate",
     rating: 5,
@@ -16,8 +16,8 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Sarah Al-Mahmoud",
-    role: "HR Manager, Qatar",
+    name: "Husssain Chaudhary",
+    role: "Managing Director, Malaysia",
     image: "/placeholder.svg?height=60&width=60",
     alt: "Employer",
     rating: 5,

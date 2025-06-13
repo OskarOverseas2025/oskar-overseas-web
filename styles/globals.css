@@ -84,6 +84,10 @@ body {
   }
 }
 
+.container {
+  background: #000;
+}
+
 @layer base {
   * {
     @apply border-border;

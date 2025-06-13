@@ -73,8 +73,8 @@ export default function HeroSection() {
               <div className="flex items-center space-x-3">
                 <Image src={LogoImg} alt="logo" className="w-[2rem]" />
                 <div>
-                  <div className="font-bold">Global Reach</div>
-                  <div className="text-sm text-gray-600">Oskar Overseas Pvt Ltd.</div>
+                  <div className="font-bold">Oskar Overseas Pvt Ltd.</div>
+                  <div className="text-sm text-gray-600">Lalitpur, Nepal</div>
                 </div>
               </div>
             </div>

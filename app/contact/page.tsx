@@ -23,7 +23,7 @@ export default function ContactPage() {
               <ContactForm />
             </Suspense>
             {/* Office Location and Map */}
-            <div className="space-y-8">
+            <div className="space-y-8" id="location">
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Office</h2>
                 <p className="text-gray-600 mb-6">
@@ -39,9 +39,7 @@ export default function ContactPage() {
                         <p className="text-gray-600">
                           Oskar Overseas Pvt. Ltd.
                           <br />
-                          Putalisadak, Kathmandu
-                          <br />
-                          Nepal - 44600
+                          Lalitpur, Nepal
                         </p>
                       </div>
                     </div>
@@ -53,7 +51,7 @@ export default function ContactPage() {
                         <p className="text-gray-600">
                           Mobile: +977-9851031188
                           <br />
-                          WhatsApp: +977-9704146978
+                          WhatsApp: +44 7472 498254
                         </p>
                       </div>
                     </div>
@@ -62,11 +60,7 @@ export default function ContactPage() {
                       <Mail className="h-5 w-5 text-orange-600 mt-1" />
                       <div>
                         <h3 className="font-semibold text-gray-900">Email Addresses</h3>
-                        <p className="text-gray-600">
-                          General: info@oskaroverseas.com
-                          <br />
-                          Support: support@oskaroverseas.com
-                        </p>
+                        <p className="text-gray-600">support@oskaroverseas.com</p>
                       </div>
                     </div>
 

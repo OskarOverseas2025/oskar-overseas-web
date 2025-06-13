@@ -5,7 +5,7 @@ export default function Gallery() {
   return (
     <div className="min-h-screen bg-white">
       <InnerBanner
-        imgSrc="/gallery.png"
+        imgSrc="/about.jpg"
         title="Gallery"
         description={`OSKAR NEPAL has been in operation since 1999 with over ${new Date().getFullYear() - 1999} years of experience in the recruitment business.`}
       />

@@ -11,24 +11,24 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center">
+            <Link href={"/"} className="flex items-center">
               <Image src={LogoImg} alt="logo" className="w-[2rem]" />
               <span className="text-xl font-bold text-white">Oskar Overseas</span>
-            </div>
+            </Link>
             <p className="text-gray-400">Connecting Nepal to the world through ethical recruitment since 1999.</p>
             <div className="space-y-2">
-              <div className="flex items-center text-gray-400">
+              <Link href={"/contact#location"} className="flex items-center text-gray-400 hover:text-white">
                 <MapPin className="h-4 w-4 mr-2" />
                 <span className="text-sm">Lalitpur, Nepal</span>
-              </div>
-              <div className="flex items-center text-gray-400">
+              </Link>
+              <Link href={"tel:+9779851031188"} className="flex items-center text-gray-400 hover:text-white">
                 <Phone className="h-4 w-4 mr-2" />
                 <span className="text-sm">+977-9851031188</span>
-              </div>
-              <div className="flex items-center text-gray-400">
+              </Link>
+              <Link href={"mailto:support@oskaroverseas.com"} className="flex items-center text-gray-400 hover:text-white">
                 <Mail className="h-4 w-4 mr-2" />
-                <span className="text-sm">info@oskaroverseas.com</span>
-              </div>
+                <span className="text-sm">support@oskaroverseas.com</span>
+              </Link>
             </div>
           </div>
           <div>
@@ -53,11 +53,25 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="font-bold mb-4">Services</h3>
-            <div className="space-y-2">
-              <div className="text-gray-400 text-sm">Skilled Labor</div>
-              <div className="text-gray-400 text-sm">Hospitality</div>
-              <div className="text-gray-400 text-sm">Healthcare</div>
-              <div className="text-gray-400 text-sm">Construction</div>
+            <div className="space-y-2 flex flex-col">
+              <Link href={"/#services"} className="text-gray-400 hover:text-white">
+                Recruitment
+              </Link>
+              <Link href={"/#services"} className="text-gray-400 hover:text-white">
+                Medical
+              </Link>
+              <Link href={"/#services"} className="text-gray-400 hover:text-white">
+                Documentation
+              </Link>
+              <Link href={"/#services"} className="text-gray-400 hover:text-white">
+                Orientation
+              </Link>
+              <Link href={"/#services"} className="text-gray-400 hover:text-white">
+                Deployment
+              </Link>
+              <Link href={"/#services"} className="text-gray-400 hover:text-white">
+                Post-Deployment
+              </Link>
             </div>
           </div>
           <div>
@@ -72,7 +86,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
             © {new Date().getFullYear()} Oskar Overseas Pvt. Ltd. All rights reserved.
-            <a href="https://technirvana.com.np/" target="_blank">
+            <a href="https://technirvana.com.np/" className="text-gray-400 hover:text-white" target="_blank">
               {" "}
               {"  "}Developed by Tech Nirvana.
             </a>

@@ -22,6 +22,9 @@ const galleryImages = [
   { id: 7, src: "/gallery/7.jpg", alt: "Gallery image 7" },
   { id: 8, src: "/gallery/8.jpg", alt: "Gallery image 8" },
   { id: 9, src: "/gallery/9.jpg", alt: "Gallery image 9" },
+  { id: 10, src: "/gallery/10.jpeg", alt: "Gallery image 10" },
+  { id: 11, src: "/gallery/11.jpeg", alt: "Gallery image 11" },
+  { id: 12, src: "/gallery/12.jpeg", alt: "Gallery image 12" },
 ];
 
 export default function ImageSection() {
@@ -45,6 +48,7 @@ export default function ImageSection() {
                   alt={item.alt}
                   className="object-cover h-full w-full rounded-md cursor-pointer"
                   height={"256"}
+                  style={{ objectPosition: "top" }}
                   width={"256"}
                   onClick={() => handleOpen(index)}
                 />

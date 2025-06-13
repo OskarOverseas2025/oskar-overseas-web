@@ -35,7 +35,7 @@ const teamMembers = [
   {
     id: 4,
     name: "Megh Gurung",
-    title: "Office manager",
+    title: "Office Manager",
     image: Megh,
     alt: "Documentation Head",
     description: "Handles documentations for recruiting and medical reports.",
@@ -46,7 +46,7 @@ const teamMembers = [
     title: "Front Officer",
     image: Sita,
     alt: "Welfare Officer",
-    description: "Coordinate with all candidates.",
+    description: "Coordinates with all candidates and supports smooth front-desk operations.",
   },
 ];
 

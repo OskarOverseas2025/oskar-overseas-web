@@ -21,9 +21,9 @@ export default function Footer() {
                 <MapPin className="h-4 w-4 mr-2" />
                 <span className="text-sm">Lalitpur, Nepal</span>
               </Link>
-              <Link href={"tel:+9779851031188"} className="flex items-center text-gray-400 hover:text-white">
+              <Link href={"tel:+977 9863801109"} className="flex items-center text-gray-400 hover:text-white">
                 <Phone className="h-4 w-4 mr-2" />
-                <span className="text-sm">+977-9851031188</span>
+                <span className="text-sm">+977 9863801109</span>
               </Link>
               <Link href={"mailto:support@oskaroverseas.com"} className="flex items-center text-gray-400 hover:text-white">
                 <Mail className="h-4 w-4 mr-2" />

@@ -49,7 +49,7 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold text-gray-900">Phone Numbers</h3>
                         <p className="text-gray-600">
-                          Mobile: +977-9851031188
+                          Mobile: +977 9863801109
                           <br />
                           WhatsApp: +44 7472 498254
                         </p>

@@ -1,49 +1,92 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Send } from "lucide-react";
-import { useFormStatus } from "react-dom";
-import { sendContactMsg } from "@/app/_actions/email";
+import { postData } from "@/utils/apiHandle";
 import { useSearchParams } from "next/navigation";
 
-export default function ContactForm() {
-  const formRef = useRef<HTMLFormElement>(null);
+interface FormData {
+  full_name: string;
+  email: string;
+  phone: string;
+  inquiry_type: string;
+  preferred_country?: string;
+  work_experience?: string;
+  message: string;
+}
 
+export default function ContactForm() {
   const searchParams = useSearchParams();
   const initialInquiryType =
     searchParams.get("inquiryType") === "job-seeker" ? "job-seeker" : searchParams.get("inquiryType") === "employer" ? "employer" : "general";
 
+  const [formData, setFormData] = useState<FormData>({
+    full_name: "",
+    email: "",
+    phone: "",
+    inquiry_type: initialInquiryType,
+    preferred_country: "",
+    work_experience: "",
+    message: "",
+  });
+
   const [error, setError] = useState<any>({});
   const [success, setSuccess] = useState(false);
-  const [inquiryType, setInquiryType] = useState(initialInquiryType);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const initialFormDataState = {
+    full_name: "",
+    email: "",
+    phone: "",
+    inquiry_type: "general",
+    preferred_country: "",
+    work_experience: "",
+    message: "",
+  };
 
   useEffect(() => {
     console.log("Search Params:", searchParams.toString());
-    setInquiryType(
-      searchParams.get("inquiryType") === "job-seeker" ? "job-seeker" : searchParams.get("inquiryType") === "employer" ? "employer" : "general"
-    );
+    const inquiryType =
+      searchParams.get("inquiryType") === "job-seeker" ? "job-seeker" : searchParams.get("inquiryType") === "employer" ? "employer" : "general";
+    setFormData((prev) => ({ ...prev, inquiry_type: inquiryType }));
   }, [searchParams]);
 
+  const handleInput = (field: keyof FormData) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [field]: event.target.value });
+  };
+
+  const handleSelectChange = (field: keyof FormData) => (value: string) => {
+    setFormData({ ...formData, [field]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSuccess(false);
+    setError({});
+
+    try {
+      setIsSubmitting(true);
+      const response = await postData(`oskar-contact`, formData);
+      if (response.success) {
+        setSuccess(true);
+        setFormData(initialFormDataState);
+      } else {
+        setError({ submitError: "Failed to send message. Please try again." });
+      }
+    } catch (error) {
+      console.log(error, "error");
+      setError({ submitError: "An error occurred. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <form
-      ref={formRef}
-      action={async (formData) => {
-        setSuccess(false);
-        const errorResult = await sendContactMsg({}, formData);
-        if (errorResult && Object.keys(errorResult).length > 0) {
-          setError(errorResult);
-        } else {
-          setError({});
-          setSuccess(true);
-          formRef.current?.reset();
-        }
-      }}
-      className="space-y-6"
-    >
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
         <p className="text-gray-600">
@@ -72,12 +115,30 @@ export default function ContactForm() {
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="name">Full Name *</Label>
-          <Input id="name" name="name" type="text" placeholder="Enter your full name" required className="mt-1" />
+          <Input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter your full name"
+            required
+            className="mt-1"
+            value={formData.full_name}
+            onChange={handleInput("full_name")}
+          />
           {error?.name && <p className="text-red-600 text-sm mt-1">{error.name}</p>}
         </div>
         <div>
           <Label htmlFor="email">Email Address *</Label>
-          <Input id="email" name="email" type="email" placeholder="Enter your email" required className="mt-1" />
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+            className="mt-1"
+            value={formData.email}
+            onChange={handleInput("email")}
+          />
           {error?.email && <p className="text-red-600 text-sm mt-1">{error.email}</p>}
         </div>
       </div>
@@ -85,12 +146,21 @@ export default function ContactForm() {
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="phone">Phone Number *</Label>
-          <Input id="phone" name="phone" type="tel" placeholder="+977-XXXXXXXXX" required className="mt-1" />
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="+977-XXXXXXXXX"
+            required
+            className="mt-1"
+            value={formData.phone}
+            onChange={handleInput("phone")}
+          />
           {error?.phone && <p className="text-red-600 text-sm mt-1">{error.phone}</p>}
         </div>
         <div>
           <Label htmlFor="inquiryType">Inquiry Type *</Label>
-          <Select name="inquiryType" required value={inquiryType} onValueChange={(value) => setInquiryType(value)}>
+          <Select name="inquiryType" required value={formData.inquiry_type} onValueChange={handleSelectChange("inquiry_type")}>
             <SelectTrigger className="mt-1">
               <SelectValue placeholder="Select inquiry type" />
             </SelectTrigger>
@@ -104,11 +174,11 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {inquiryType === "job-seeker" && (
+      {formData.inquiry_type === "job-seeker" && (
         <div className="grid md:grid-cols-2 gap-4">
           <div>
             <Label htmlFor="country">Preferred Country</Label>
-            <Select name="country">
+            <Select name="country" value={formData.preferred_country} onValueChange={handleSelectChange("preferred_country")}>
               <SelectTrigger className="mt-1">
                 <SelectValue placeholder="Select country" />
               </SelectTrigger>
@@ -129,7 +199,7 @@ export default function ContactForm() {
           </div>
           <div>
             <Label htmlFor="experience">Work Experience</Label>
-            <Select name="experience">
+            <Select name="experience" value={formData.work_experience} onValueChange={handleSelectChange("work_experience")}>
               <SelectTrigger className="mt-1">
                 <SelectValue placeholder="Select experience level" />
               </SelectTrigger>
@@ -154,30 +224,25 @@ export default function ContactForm() {
           rows={5}
           required
           className="mt-1"
+          value={formData.message}
+          onChange={handleInput("message")}
         />
         {error?.message && <p className="text-red-600 text-sm mt-1">{error.message}</p>}
       </div>
 
-      <SubmitButton />
+      <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isSubmitting}>
+        {isSubmitting ? (
+          <>
+            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+            Sending Message...
+          </>
+        ) : (
+          <>
+            Send Message
+            <Send className="ml-2 h-4 w-4" />
+          </>
+        )}
+      </Button>
     </form>
-  );
-}
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700" disabled={pending}>
-      {pending ? (
-        <>
-          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-          Sending Message...
-        </>
-      ) : (
-        <>
-          Send Message
-          <Send className="ml-2 h-4 w-4" />
-        </>
-      )}
-    </Button>
   );
 }

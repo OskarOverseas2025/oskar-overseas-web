@@ -1,9 +1,9 @@
-import { Card } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import Faq from "./Faq";
-import ContactForm from "./_components/ContactForm";
-import InnerBanner from "@/components/InnerBanner";
-import { Suspense } from "react";
+import { Card } from '@/components/ui/card'
+import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import Faq from './Faq'
+import ContactForm from './_components/ContactForm'
+import InnerBanner from '@/components/InnerBanner'
+import { Suspense } from 'react'
 
 export default function ContactPage() {
   return (
@@ -82,7 +82,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <section>
+      {/*   <section>
         <div className="lg:h-[38.3125rem] md:h-[25rem] h-[16.1875rem] w-full">
           <iframe
             src={
@@ -94,8 +94,8 @@ export default function ContactPage() {
             className="w-full h-full"
           />
         </div>
-      </section>
+      </section> */}
       <Faq />
     </div>
-  );
+  )
 }

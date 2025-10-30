@@ -1,9 +1,9 @@
-import { Card } from '@/components/ui/card'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-import Faq from './Faq'
-import ContactForm from './_components/ContactForm'
-import InnerBanner from '@/components/InnerBanner'
-import { Suspense } from 'react'
+import { Card } from "@/components/ui/card";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import Faq from "./Faq";
+import ContactForm from "./_components/ContactForm";
+import InnerBanner from "@/components/InnerBanner";
+import { Suspense } from "react";
 
 export default function ContactPage() {
   return (
@@ -19,15 +19,25 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Suspense fallback={<div className="text-center text-gray-500">Loading contact form...</div>}>
+            <Suspense
+              fallback={
+                <div className="text-center text-gray-500">
+                  Loading contact form...
+                </div>
+              }
+            >
               <ContactForm />
             </Suspense>
             {/* Office Location and Map */}
             <div className="space-y-8" id="location">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Office</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Visit Our Office
+                </h2>
                 <p className="text-gray-600 mb-6">
-                  Located in the heart of Kathmandu, our office is easily accessible and equipped with modern facilities to serve you better.
+                  Located in the heart of Kathmandu, our office is easily
+                  accessible and equipped with modern facilities to serve you
+                  better.
                 </p>
 
                 <Card className="p-6">
@@ -35,7 +45,9 @@ export default function ContactPage() {
                     <div className="flex items-start space-x-3">
                       <MapPin className="h-5 w-5 text-blue-600 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900">Head Office</h3>
+                        <h3 className="font-semibold text-gray-900">
+                          Head Office
+                        </h3>
                         <p className="text-gray-600">
                           Oskar Overseas Pvt. Ltd.
                           <br />
@@ -47,10 +59,12 @@ export default function ContactPage() {
                     <div className="flex items-start space-x-3">
                       <Phone className="h-5 w-5 text-green-600 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900">Phone Numbers</h3>
+                        <h3 className="font-semibold text-gray-900">
+                          Phone Numbers
+                        </h3>
                         <p className="text-gray-600">
-                          Mobile: +977 9863801109
-                          <br />
+                          {/* Mobile: +977 9863801109 */}
+                          {/* <br /> */}
                           WhatsApp: +44 7472 498254
                         </p>
                       </div>
@@ -59,19 +73,27 @@ export default function ContactPage() {
                     <div className="flex items-start space-x-3">
                       <Mail className="h-5 w-5 text-orange-600 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900">Email Addresses</h3>
-                        <p className="text-gray-600">support@oskaroverseas.com</p>
+                        <h3 className="font-semibold text-gray-900">
+                          Email Addresses
+                        </h3>
+                        <p className="text-gray-600">
+                          support@oskaroverseas.com
+                        </p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3">
                       <Clock className="h-5 w-5 text-purple-600 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900">Office Hours</h3>
+                        <h3 className="font-semibold text-gray-900">
+                          Office Hours
+                        </h3>
                         <p className="text-gray-600">
                           Sunday - Friday: 9:00 AM - 5:00 PM
                           <br />
-                          <span className="text-red-600">Closed on public holidays</span>
+                          <span className="text-red-600">
+                            Closed on public holidays
+                          </span>
                         </p>
                       </div>
                     </div>
@@ -97,5 +119,5 @@ export default function ContactPage() {
       </section> */}
       <Faq />
     </div>
-  )
+  );
 }
